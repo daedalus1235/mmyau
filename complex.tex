@@ -1,0 +1,43 @@
+%! TEX root = mmyau.tex
+\chapter{Complex Numbers}
+\section{The Imaginary Unit}
+As you may recall, there is no real solution to the polynomial 
+\[x^2+1=0\]
+Rather, we define a new number, the imaginary unit \(i\), such that
+\[i^2\equiv-1\]
+This is a number just like any real number, but doesn't add directly to real numbers. Instead, when added to a real number, it forms a \emph{complex number}. The set of all complex numbers is denoted \(\C\). Examples of complex numbers are: \(1+2i, 4, 3i, \pi+i\sqrt{e}\).
+
+In general arithmetic with complex numbers is very similar to arithmetic of algebraic variables, albeit with one caveat: we replace any occurences of \(i^2\) with \(-1\). For instance, let \(w,z\in\C\) be complex numbers. We may write, for real coefficients \(a,b,c,d\in\R\) that \(z=a+ib, w= c+id\) for suitable coefficients. We can then perform addition as normal:
+\[z+w = a+ib + c+id = (a+c) + i(b+d)\]
+Similarly, we can multiply using FOIL:\@
+\[zw = (a+ib)(c+id) = ac + ibc + iad + i^2bd = (ac-bd) +i(ad+bc)\]
+
+\subsection{Complex Components and Conjugates}
+real
+imaginary
+conjugate
+
+\section{Euler's Formula}
+Euler's formula is by far the most useful result of complex numbers in computation. It states that
+\begin{equation}
+	e^{i\theta} = \cos\theta + i\sin\theta \label{eq1:euler}
+\end{equation}
+We can show that this is true by comparing Taylor Series expansions of both sides. Recall:
+\begin{align*}
+	\exp(x) &= 1 + x + \frac{1}{2}x^2 + \frac{1}{3!} x^3+\frac{1}{4!}x^4+\frac{1}{5!}x^5\dots\\
+	\cos(x) &= 1 - \frac{1}{2}x^2 + \frac{1}{4!}x^4+\dots\\
+	\sin(x) &= x - \frac{1}{3!}x^3+\frac{1}{5!}x^5+\dots
+\end{align*}
+Computing the LHS of Equation~\ref{eq1:euler},
+\begin{align*}
+	\exp(ix) &= 1 + ix -\frac{1}{2}x^2 - \frac{i}{3!} x^3 + \frac{1}{4!}x^4 + \frac{i}{5!}x^5+\dots\\
+	\intertext{Similarly, the terms on the RHS can be computed as}
+	\cos(x)&=1\hphantom{+ix}-\frac{1}{2}x^2\hphantom{-\frac{i}{3!}x^3}+\frac{1}{4!}x^4\hphantom{+\frac{i}{5!}x^5}+\dots\\
+	i\sin(x)&=\hphantom{1+}ix\hphantom{-\frac{1}{2}x^2}-\frac{i}{3!}x^3\hphantom{+\frac{1}{4!}x^4}+\frac{i}{5!}x^5+\dots
+\end{align*}
+As you should be able to see, the terms in the Taylor expansions of both sides matches. This equation will be very useful in deriving trigonometric identities, as will be seen in the next chapter.
+
+\subsection{Polar Complex Numbers}
+Euler's formula lends itself nicely to an additional way to denote complex numbers, which is the \emph{polar form}. 
+
+
