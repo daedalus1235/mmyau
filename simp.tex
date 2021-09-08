@@ -1,14 +1,27 @@
 %! TEX root = mmyau.tex
 \chapter{Simplifying Algebra}
 \section{Definition and Substitution}
+\emph{Never} carry around bulky expressions; chances are you'll mess up copying it down at some point and end up with a fraction that doesn't reduce or a term that doesn't cancel. Rather, you should always define a placeholder variable and carry that around instead.
+
 
 \section{The Power of a Unit}
 \subsection{Strategically Multiplying by One}
-\subsubsection{Strategically Adding Zero}
-A similar technique can be accomplised in addition;
+\subsection{Strategically Adding Zero}
+A similar technique can be accomplished in addition;
+
+\subsubsection{Lagrange Multipliers}
+One well known example of strategically adding zero is 
+
 \subsection{Strategically using the Identity}
 We can extend this idea of strategically multiplying by one to strategically multiplying by the identity.
-\section{Strategically Differentiating WRT One}
+
+\subsection{Strategically Differentiating WRT One}
+Perhaps one of the most egregious abuse of a unit is to differentiate with respect to the number one. As we can arbitrarily insert a 1 anywhere, we can insert a variable \(\xi \equiv 1\), take the derivative \(\partial_\xi\), and evaluate it at \(\xi = 1\). In fact, this can be used to derive the Gibbs-Duhem relation in thermodynamics.
 
 \section{Superposition Principle}
+Remember that the superposition principle works with both addition \emph{and subtraction}. Sometimes it is easier to consider the lack of an object rather than compute a wider sum or the whole. For example, consider a disc radius \(r\) and mass density \(\rho\), with a hole drilled out of it at \(r/2\) with radius \(r/2\). If we want to calculate the centre of mass, we could 
+\[r_{cm} = \]
+however, we could instead view it as the sum of the larger disc and a smaller ``anti-disc.'' This turns the calculation from a tedious integral to a simple weighted sum. We can compute the inertia tensor in the same way. [excersize: do this]
+
 Moment of Inertia and CoM of disk with missing disk
+
