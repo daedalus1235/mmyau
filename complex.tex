@@ -12,11 +12,24 @@ In general arithmetic with complex numbers is very similar to arithmetic of alge
 Similarly, we can multiply using FOIL:\@
 \[zw = (a+ib)(c+id) = ac + ibc + iad + i^2bd = (ac-bd) +i(ad+bc)\]
 
-\subsection{Complex Components and Conjugates}
-real
-imaginary
-conjugate
+\subsection{The Complex Plane}
+A complex number can be separated into its real and imaginary components as follows
+\begin{equation}
+	z = \Re(z) + i\Im(z)
+\end{equation}
+where \(\Re(z)\) is called the real part (as it is not attached to the imaginary unit) and \(\Im(z)\) is called the imaginary part (as it is attached to the imaginary unit). For example, if we consider \(z = a+ib\), we have the real part of \(z\) to be \(\Re(z)=a\) and the imaginary part to be \(\Im(z) = b\). Note that while the imaginary part is called the imaginary part, it is a \emph{real} number. 
 
+We can plot the complex number on the 2D plane by using the mapping
+\[a+ib \mapsto (a,b)\]
+That is, we treat the real component as the \(x\) position and the imaginary component as the \(y\) position.
+
+This visualization lends itself nicely to an interpretation of the size of a complex number. Just as the size of a real number is given by how far it is from 0, the size of a complex number is given by how far it is from \(0+i0 = 0\). We can do this of course using pythagorean theorem:
+\begin{equation}
+	\abs{z} = \sqrt{\Re(z)^2+\Im(z)^2}
+\end{equation}
+The magnitude of the complex number \(z=a+ib\) would then be \(\abs z = \sqrt{a^2+b^2}\).
+
+What happens now, if we
 \section{Euler's Formula}
 Euler's formula is by far the most useful result of complex numbers in computation. It states that
 \begin{equation}
@@ -35,9 +48,9 @@ Computing the LHS of Equation~\ref{eq1:euler},
 	\cos(x)&=1\hphantom{+ix}-\frac{1}{2}x^2\hphantom{-\frac{i}{3!}x^3}+\frac{1}{4!}x^4\hphantom{+\frac{i}{5!}x^5}+\dots\\
 	i\sin(x)&=\hphantom{1+}ix\hphantom{-\frac{1}{2}x^2}-\frac{i}{3!}x^3\hphantom{+\frac{1}{4!}x^4}+\frac{i}{5!}x^5+\dots
 \end{align*}
-As you should be able to see, the terms in the Taylor expansions of both sides matches. This equation will be very useful in deriving trigonometric identities, as will be seen in the next chapter.
+As you should be able to see, the terms in the Taylor expansions of both sides matches. This equation will be very useful in deriving trigonometric identities, as will be seen in the next chapter, but truly shows its power in quantum mechanics.
 
 \subsection{Polar Complex Numbers}
-Euler's formula lends itself nicely to an additional way to denote complex numbers, which is the \emph{polar form}. 
+Euler's formula lends itself nicely to an additional way to denote complex numbers, which is the \emph{polar form}. The easiest way to visualise this is through the \emph{complex plane}. This lets us plot the complex numbers on a 2D cartesian plane. We consider the real part of the complex number to be 
 
 
