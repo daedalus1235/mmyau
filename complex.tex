@@ -27,9 +27,8 @@ This visualization lends itself nicely to an interpretation of the size of a com
 \begin{equation}
 	\abs{z} = \sqrt{\Re(z)^2+\Im(z)^2}
 \end{equation}
-The magnitude of the complex number \(z=a+ib\) would then be \(\abs z = \sqrt{a^2+b^2}\).
+The magnitude of the complex number \(z=a+ib\) would then be \(\abs z = \sqrt{a^2+b^2}\), for instance
 
-What happens now, if we
 \section{Euler's Formula}
 Euler's formula is by far the most useful result of complex numbers in computation. It states that
 \begin{equation}
@@ -50,7 +49,31 @@ Computing the LHS of Equation~\ref{eq1:euler},
 \end{align*}
 As you should be able to see, the terms in the Taylor expansions of both sides matches. This equation will be very useful in deriving trigonometric identities, as will be seen in the next chapter, but truly shows its power in quantum mechanics.
 
+Note that for any theta, we then have
+\[\abs{e^{i\theta}} = \cos^2\theta + \sin^2\theta = 1\]
+that is, \(e^{i\theta}\) has unit magnitude. We can thus consider \(e^{i\theta}\) as a unit vector.
+
 \subsection{Polar Complex Numbers}
-Euler's formula lends itself nicely to an additional way to denote complex numbers, which is the \emph{polar form}. The easiest way to visualise this is through the \emph{complex plane}. This lets us plot the complex numbers on a 2D cartesian plane. We consider the real part of the complex number to be 
-
-
+Euler's formula lends itself nicely to an additional way to denote complex numbers, which is the \emph{polar form}. As mentioned before, we can graphically represent the complex numbers on the complex plane. However, just like a cartesian plane, we can also represent each point with a different set of variables, in \emph{polar coordinates}. In this set of coordinates, we transform by
+\begin{align*}
+	x&=r\cos\theta\\
+	y&=r\sin\theta
+\end{align*}
+How can we rewrite complex numbers in polar form? Consider the number
+\[z = re^{i\theta}\]
+Expanding the complex exponential using Euler's formula, we see that we can rewrite it as
+\[z = r\cos\theta + ir\sin\theta\]
+thus, we see that
+\begin{subequations}
+	\begin{align}
+		\Re(z)&=r\cos\theta\\
+		\Im(z)&=r\sin\theta
+	\end{align}
+\end{subequations}
+Recalling how we displayed the complex numbers on the plane, we see that \(z=re^{i\theta}\) is \emph{exactly} just \(z\) in terms of the polar coordinates \(r,\theta\). This transformation is given
+\begin{subequations}
+	\begin{align}
+		r &= \abs{z}\\
+		\theta &= \arctan\left(\tfrac{\Im(z)}{\Re(z)}\right)
+	\end{align}
+\end{subequations}

@@ -12,13 +12,15 @@ Sometimes, redefining a constant strategically can make integrals significantly 
 A similar technique can be accomplished in addition;
 
 \subsubsection{Lagrange Multipliers}
-One well known example of strategically adding zero is 
+One well known example of strategically adding zero is of course the method of \emph{Lagrange multipliers} in the optimization  of a function subject to a constraint.
 
 \subsection{Strategically using the Identity}
 We can extend this idea of strategically multiplying by one to strategically multiplying by the identity.
 
 \subsection{Strategically Differentiating WRT One}
-Perhaps one of the most egregious abuse of a unit is to differentiate with respect to the number one. As we can arbitrarily insert a 1 anywhere, we can insert a variable \(\xi \equiv 1\), take the derivative \(\partial_\xi\), and evaluate it at \(\xi = 1\). In fact, this can be used to derive the Gibbs-Duhem relation in thermodynamics.
+Perhaps one of the most egregious abuse of a unit is to differentiate with respect to the number one. As we can arbitrarily insert a 1 anywhere, we can insert a variable \(\xi \equiv 1\), take the derivative \(\partial_\xi\), and evaluate it at \(\xi = 1\). In fact, this can be used to derive the Gibbs-Duhem relation in thermodynamics. For example, say I wish to calculate
+\[\int_0^\infty x^2e^{-x^2}\d{x}\]
+Obviously this is a gamma function in disguise (just substitute \(u=x^2\)), but say we don't know that.
 
 \section{Arbitrary Constants\ldots}
 \subsection{\ldots need not be arbitrary}
