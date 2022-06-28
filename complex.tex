@@ -1,33 +1,97 @@
 %! TEX root = mmyau.tex
-\chapter{Complex Numbers}
+\chapter{Complex Numbers}\label{ch:complex}
 \section{The Imaginary Unit}
 As you may recall, there is no real solution to the polynomial 
 \[x^2+1=0\]
 Rather, we define a new number, the imaginary unit \(i\), such that
 \[i^2\equiv-1\]
-This is a number just like any real number, but doesn't add directly to real numbers. Instead, when added to a real number, it forms a \emph{complex number}. The set of all complex numbers is denoted \(\C\). Examples of complex numbers are: \(1+2i, 4, 3i, \pi+i\sqrt{e}\).
+This is a number just like any real number, but doesn't add directly to real numbers. Instead, when added to a real number, it forms a \emph{complex number}. The set of all complex numbers is denoted \(\C\).
+\begin{equation}
+	\C\equiv\{z | z = a+ib \text{\ where } a,b\in \R\}
+\end{equation}
+Examples of complex numbers are: \(1+2i, 4, 3i, \pi+i\sqrt{e}\).
 
-In general arithmetic with complex numbers is very similar to arithmetic of algebraic variables, albeit with one caveat: we replace any occurences of \(i^2\) with \(-1\). For instance, let \(w,z\in\C\) be complex numbers. We may write, for real coefficients \(a,b,c,d\in\R\) that \(z=a+ib, w= c+id\) for suitable coefficients. We can then perform addition as normal:
-\[z+w = a+ib + c+id = (a+c) + i(b+d)\]
+In general, arithmetic with complex numbers is very similar to the arithmetic of algebraic variables, albeit with one caveat: we replace any occurences of \(i^2\) with \(-1\). For instance, let \(w,z\in\C\) be complex numbers. We may write, for real coefficients \(a,b,c,d\in\R\) that \(z=a+ib, w= c+id\) for suitable coefficients. We can then perform addition (or subtraction) as normal:
+\begin{equation}
+	z\pm w = (a+ib) \pm (c+id) = (a\pm c) + i(b\pm d)
+\end{equation}
 Similarly, we can multiply using FOIL:\@
-\[zw = (a+ib)(c+id) = ac + ibc + iad + i^2bd = (ac-bd) +i(ad+bc)\]
-
-\subsection{The Complex Plane}
-A complex number can be separated into its real and imaginary components as follows
 \begin{equation}
-	z = \Re(z) + i\Im(z)
+	zw = (a+ib)(c+id) = ac + ibc + iad + i^2bd = (ac-bd) +i(ad+bc)
 \end{equation}
-where \(\Re(z)\) is called the real part (as it is not attached to the imaginary unit) and \(\Im(z)\) is called the imaginary part (as it is attached to the imaginary unit). For example, if we consider \(z = a+ib\), we have the real part of \(z\) to be \(\Re(z)=a\) and the imaginary part to be \(\Im(z) = b\). Note that while the imaginary part is called the imaginary part, it is a \emph{real} number. 
-
-We can plot the complex number on the 2D plane by using the mapping
-\[a+ib \mapsto (a,b)\]
-That is, we treat the real component as the \(x\) position and the imaginary component as the \(y\) position.
-
-This visualization lends itself nicely to an interpretation of the size of a complex number. Just as the size of a real number is given by how far it is from 0, the size of a complex number is given by how far it is from \(0+i0 = 0\). We can do this of course using pythagorean theorem:
+Following from the difference of two perfect squares
+\[(a+b)(a-b)=a^2-b^2\]
+we find that 
+\[(a+ib)(a-ib)=a^2+b^2\]
+The quantity
 \begin{equation}
-	\abs{z} = \sqrt{\Re(z)^2+\Im(z)^2}
+	z\ast = a-ib
 \end{equation}
-The magnitude of the complex number \(z=a+ib\) would then be \(\abs z = \sqrt{a^2+b^2}\), for instance
+is the \emph{complex conjugate} of \(z=a+ib\). In standard math texts, you will also see the notation \(\bar z = a-ib\). Examples of complex conjugates are \(4+3i\) and \(4-3i\), or \(-2-3i\) and \(-2+3i\). 
+
+The complex conjugate is useful in that it allows us to now divide. Consider
+\[\frac{z}{w} = \frac{a+ib}{c+id}\]
+it is not immediately obvious how we can simplify this. However strategically multiplying by one\footnote{See Section~\ref{sec:smbo}} will make this much simpler:
+\begin{align}
+	\frac{a+ib}{c+id} &=\frac{a+ib}{c+id}*\frac{c-id}{c-id}\nonumber\\
+			  &=\frac{(ac+bd)+(bc-ad)i}{c^2+d^2}\nonumber\\
+			  &=\frac{ac+bd}{c^2+d^2} + \frac{bc-ad}{c^2+d^2}i
+\end{align}
+
+\begin{exercise}
+	Let \(w=4-3i\), \(x=-2-1i\), \(y=-3-i\) and \(z=1+5i\). Compute the following
+	\begin{multicols}{3}
+	\begin{enumerate}[label = (\alph*)]
+		\item \(w+z\)
+		\item \(w+x+y\)
+		\item \(z-w\)
+		\item \(xy\)
+		\item \(wx\)
+		\item \(w\ast\)
+		\item\label{e1:cj1} \(x(y\ast)\)
+		\item\label{e1:cj2} \((xy)\ast\)
+		\item \(w/z\)
+		\item \((y+3)/(x-4)\)
+		\item\label{e1:cj3} \(wx/yz\)
+		\item\label{e1:cj4} \((wx)\ast/yz\)
+	\end{enumerate}
+	\end{multicols}
+	Compare your results for part~\ref{e1:cj1} to part~\ref{e1:cj2} and for part~\ref{e1:cj3} to part~\ref{e1:cj4}.
+\begin{solution}
+	\begin{enumerate}[label = (\alph*)]
+		\item I'm too lazy to compute these rn
+	\end{enumerate}
+	Note that they do not equal.
+\end{solution}
+\end{exercise}
+\begin{exercise}
+	Show that multiplication by complex numbers is commutative; that is, \(zw=wz, \forall w,z\in \C\).
+\begin{solution}
+	Too lazy, but follows from commutation in reals.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+	Properties of the complex conjugate:
+	\begin{enumerate}[label = (\alph*)]
+		\item Convince yourself that \((z\ast)\ast=z\)
+		\item Show that
+			\begin{enumerate}[label = (\roman*)]
+				\item \((w\pm z)\ast = w\ast \pm z\ast\)
+				\item\label{e1:cjpm} \((wz)\ast = w\ast z\ast\)
+				\item \((w/z)\ast = w\ast/z\ast\)
+			\end{enumerate}
+			or, that the conjugate distributes over the four basic arithmetic operations
+	\end{enumerate}
+\begin{solution}
+	\begin{enumerate}[label = (\alph*)]
+		\item Let \(z=a+ib\). Then, \(z\ast = a-ib\) and \((z\ast)\ast = a-(-ib) = a+ib = z\).
+		\item \begin{enumerate}[label = (\roman*)]
+			\item too lazy
+		\end{enumerate}
+	\end{enumerate}
+\end{solution}
+\end{exercise}
 
 \section{Euler's Formula}
 Euler's formula is by far the most useful result of complex numbers in computation. It states that
@@ -48,12 +112,96 @@ Computing the LHS of Equation~\ref{eq1:euler},
 	i\sin(x)&=\hphantom{1+}ix\hphantom{-\frac{1}{2}x^2}-\frac{i}{3!}x^3\hphantom{+\frac{1}{4!}x^4}+\frac{i}{5!}x^5+\dots
 \end{align*}
 As you should be able to see, the terms in the Taylor expansions of both sides matches. This equation will be very useful in deriving trigonometric identities, as will be seen in the next chapter, but truly shows its power in quantum mechanics.
+\begin{exercise}
+	Use the above argument to write \(e^{-i\theta}\) in terms of \(\sin\theta\) and \(\cos\theta\). How then, are \(e^{i\theta}\) and \(e^{-i\theta}\) related?
+\begin{solution}
+	\[e^{-i\theta} = \boxed{\cos\theta-i\sin\theta}\]
+	Thus, they are \(\boxed{\text{conjugates}}\).
+\end{solution}
+\end{exercise}
+\begin{exercise}
+	Use Euler's formula to write \(\sin\theta\) and \(\cos\theta\) in terms of the complex exponentials \(e^{i\theta}\) and \(e^{-i\theta}\).
+	\begin{solution}
+		just do it
+	\end{solution}
+\end{exercise}
 
-Note that for any theta, we then have
-\[\abs{e^{i\theta}} = \cos^2\theta + \sin^2\theta = 1\]
-that is, \(e^{i\theta}\) has unit magnitude. We can thus consider \(e^{i\theta}\) as a unit vector.
+\section{The Complex Plane}
+A complex number can be separated into its real and imaginary components as follows
+\begin{equation}
+	z = \Re(z) + i\Im(z)
+\end{equation}
+where \(\Re(z)\) is called the real part (as it is not attached to the imaginary unit) and \(\Im(z)\) is called the imaginary part (as it is attached to the imaginary unit). For example, if we consider \(z = a+ib\), we have the real part of \(z\) to be \(\Re(z)=a\) and the imaginary part to be \(\Im(z) = b\). Note that while the imaginary part is called the imaginary part, it is a \emph{real} number. 
+\begin{exercise}
+	Write \(\Re(z), \Im(z)\) in terms of \(z,z\ast\). Compare this to your expressions for \(\sin\theta,\cos\theta\) in terms of complex exponentials.
+\begin{solution}
+	\[\Re(z) = \frac{z+z\ast}{2}\qquad\qquad \Im(z) = \frac{z-z\ast}{2}\]
+\end{solution}
+\end{exercise}
 
-\subsection{Polar Complex Numbers}
+We can plot the complex number on the 2D plane by using the mapping
+\[a+ib \mapsto (a,b)\]
+That is, we treat the real component as the \(x\) position and the imaginary component as the \(y\) position.
+
+\begin{center}\textcolor{red}{[someone make a nice TikZ'd/inkscaped diagram for this ps tysm]}\end{center}
+
+This visualization lends itself nicely to an interpretation of the size of a complex number. Just as the size of a real number is given by how far it is from 0, the size of a complex number is given by how far it is from \(0+i0 = 0\). We can do this of course using the Pythagorean theorem:
+\begin{equation}
+	\abs{z} = \sqrt{\Re(z)^2+\Im(z)^2}
+\end{equation}
+The magnitude of the complex number \(z=a+ib\) would then be \(\abs z = \sqrt{a^2+b^2}\), for instance. An important property of the complex magnitude is that it is positive semidefinite; that is, it obeys
+\begin{equation}
+	\abs z \geq 0, \forall z\in\C
+\end{equation}
+with equality if and only if\footnote{If and only if will be henceforth abbreviated \emph{iff}}.
+\begin{equation}
+	\abs z = 0 \iff z = 0
+\end{equation}
+This makes sense, as we do not expect a number to have a ``negative size.'' 
+\begin{exercise}
+	Some properties of the complex conjugate
+	\begin{enumerate}[label = (\alph*)]
+		\item\label{e1:cjpr} Show that if \(z\ast = z\) then \(z\in \R\); that is, \(z\) is purely real.
+		\item Show that if \(z\ast = -z\), then \(z\) can be written in the form \(ia\) where \(a\in\R\). That is, \(z\) is purely imaginary.
+		\item Using~\ref{e1:cjpr}, show that \(z\ast z\) is real.
+		\item Show that we can write \(\abs{z} = \sqrt{z\ast z}\).
+	\end{enumerate}
+\begin{solution}
+	\begin{enumerate}[label = (\alph*)]
+		\item Let \(z = a+ib\) where \(a,b\in\R\). Substituting and cancelling,
+			\[z=z\ast\]
+			\[a+ib = a-ib\]
+			\[ib = -ib\]
+			\[b = -b\]
+			\[b=0\]
+			thus,
+			\[z = a\in\R\]
+		\item We have
+			\[(z\ast z)\ast = (z\ast)\ast z\ast = zz\ast = z\ast z\]
+			by commutivity. Thus, since \(z\ast z\) is its on conjugate, it must be purely real.
+	\end{enumerate}
+\end{solution}
+\end{exercise}
+\begin{exercise}
+	Show that \(\abs{e^{i\theta}} = 1,\forall \theta\in\R\).
+\begin{solution}
+	\[e^{i\theta} = \cos\theta + i\sin\theta\]
+\end{solution}
+\end{exercise}
+\begin{exercise}
+	Properties of the magnitude of a complex number
+	\begin{enumerate}[label = (\alph*)]
+		\item Show that \(\abs{zw} = \abs{z}\abs{w}\).
+		\item Show that \(\abs{z+w}\leq \abs{z}+\abs{w}\). This is known as the \emph{triangle inequality}.
+	\end{enumerate}
+\begin{solution}
+	\begin{enumerate}[label = (\alph*)]
+		\item too lazy		
+	\end{enumerate}
+\end{solution}
+\end{exercise}
+
+\subsection{Polar Form and Complex Exponents}
 Euler's formula lends itself nicely to an additional way to denote complex numbers, which is the \emph{polar form}. As mentioned before, we can graphically represent the complex numbers on the complex plane. However, just like a cartesian plane, we can also represent each point with a different set of variables, in \emph{polar coordinates}. In this set of coordinates, we transform by
 \begin{align*}
 	x&=r\cos\theta\\
@@ -70,10 +218,83 @@ thus, we see that
 		\Im(z)&=r\sin\theta
 	\end{align}
 \end{subequations}
+\begin{center}
+	\textcolor{red}{[another diagram pls]}	
+\end{center}
 Recalling how we displayed the complex numbers on the plane, we see that \(z=re^{i\theta}\) is \emph{exactly} just \(z\) in terms of the polar coordinates \(r,\theta\). This transformation is given
 \begin{subequations}
 	\begin{align}
 		r &= \abs{z}\\
-		\theta &= \arctan\left(\tfrac{\Im(z)}{\Re(z)}\right)
+		\theta &\equiv\arg(z) =  \arctan\left(\tfrac{\Im(z)}{\Re(z)}\right)
 	\end{align}
 \end{subequations}
+where the angle \(\theta\) is called the \emph{argument} of the complex number. By definition, we require that \(r\geq 0\), and \(0\leq\theta<2\pi\).
+
+The polar form of a complex number allows us now to easily multiply and exponentiate complex numbers. This is because the exponential, \(e^z\) behaves very similarly when applied to complex numbers as to real numbers\footnote{Why is beyond the scope of this text.}. Namely, it obeys the rules we expect it to:
+\begin{subequations}
+	\begin{equation}
+		e^ze^w = e^{z+w}
+	\end{equation}
+	\begin{equation}
+		(e^z)^w = (e^w)^z = e^{wz}
+	\end{equation}
+\end{subequations}
+We can then see that if we have two complex numbers \(z=re^{i\theta}\) and \(w=se^{i\phi}\),
+\begin{equation}
+	wz = sr e^{i(\theta+\phi)}
+\end{equation}
+that is, we multiply the magnitudes and add the angle.
+
+If we take the exponential of an arbitrary complex number \(z=a+ib\), we see
+\[e^{z} = e^ae^{ib}\]
+so
+\begin{subequations}
+	\begin{equation}
+		\abs{e^z} = e^{\Re{z}}
+	\end{equation}
+	\begin{equation}
+		\arg{e^z} = \Im{z}
+	\end{equation}
+\end{subequations}
+\begin{exercise}
+	Compute the following.
+	\begin{multicols}{2}
+	\begin{enumerate}[label = (\alph*)]
+		\item Write \(1+i\sqrt{3}\) in polar form.
+		\item Write \(1-i\sqrt{3}\) in polar form.
+		\item Evaluate \((\sqrt{2}-i\sqrt{2})^4\).
+		\item Evaluate \((1+i\sqrt{3})^3\)
+		\item Evaluate \((1-i\sqrt{3})^{2+i\pi}\).
+		\item Evaluate \(i^i\). Are you surprised?
+	\end{enumerate}
+	\end{multicols}
+\begin{solution}
+	\begin{enumerate}[label = (\alph*)]
+		\item i don't want to
+	\end{enumerate}
+\end{solution}
+\end{exercise}
+\subsection{Roots of Unity}
+Note that just like the equation \(x^2=1\) has two solutions, \(x=\pm 1\), the equation \(z^2=-1\) also has two solutions, \(z=\pm i\). In fact, by the Fundamental Theorem of Algebra, an \(n\) degree polynomial has \(n\) (not necessarily disticty) roots. Thus, there are \(n\) solutions to the equation \(z^n=1\). The \(n\) solutions for \(z\) are known as the \(n\)th roots of unity.
+
+Why are there so many solutions for \(z^n=1\)? Let us return to the polar form of a complex number. Recall that when we multiply (or indeed exponentiate) complex numbers, we multiply the magnitudes and add the arguments. Rewriting, 
+\[z^n = r^n e^{i n \theta } = 1\]
+taking the magnitude, we find that 
+\[\abs{r^n} = \abs{r}^n =1\]
+since \(0<r\in\R\), \(r=1\). Thus, our problem reduces to
+\[e^{i n\theta} = 1 = e^{i0}\]
+However, since \(e^{i\theta}\) is periodic with period \(2\pi\) (think back to Euler's formula), we see that this equation is valid for all \(n\theta = 2\pi m\), or
+\[\theta = \frac{2\pi}{n}{m}, \qquad\qquad m,n\in \N\text{\ and }m<n\]
+
+\begin{exercise}
+	Find the 4th roots of unity
+\begin{solution}
+	\(\boxed{1,i,-1,-i}\)	
+\end{solution}
+\end{exercise}
+\begin{exercise}
+	Find the 6th roots of unity
+\begin{solution}
+	\(\boxed{1, \frac{1}{2}+i\frac{\sqrt{3}}{2}, -\frac{1}{2}+i\frac{\sqrt{3}}{2},-1,-\frac{1}{2}-i\frac{\sqrt{3}}{2},\frac{1}{2}-i\frac{\sqrt{3}}{2}}\)
+\end{solution}
+\end{exercise}

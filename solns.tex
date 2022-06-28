@@ -1,0 +1,97 @@
+\documentclass[12pt]{book}
+\usepackage{xr-hyper}
+\usepackage{hw}
+\usepackage{multicol}
+\theoremstyle{definition}
+\usepackage{answers}
+\Newassociation{solution}{Solution}{answers}
+\newtheorem{exercise}{Exercise}
+\numberwithin{exercise}{section}
+\renewcommand{\Solutionlabel}[1]{\textbf{Solution #1}}
+\externaldocument[mmyau-]{mmyau}
+
+\newcommand\chap[1]{%
+  \chapter*{#1}%
+  \addcontentsline{toc}{chapter}{#1}}
+
+\title{mmyau Solutions Manual}
+\author{Charles Yang}
+\date{Last updated: \today}
+
+\begin{document}
+\input{CoverPage}
+\frontmatter
+\input{sintro.tex}
+\setcounter{tocdepth}{1}
+\tableofcontents
+\mainmatter\
+
+\part{Math on the Complex Plane}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:complex}}
+	\input{anscomplex}
+
+	\newpage{}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:trig}}
+	\input{anstrig}
+
+	\newpage{}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:cfn}}
+	\input{anscfn}
+
+	\newpage{}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:integrals}}
+	\input{ansintegrals}
+
+\part{Linear Algebra}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:vecmat}}
+	\input{ansvecmat}
+
+	\newpage{}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:linearity}}
+	\input{anslinearity}
+
+	\newpage{}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:ipspace}}
+	\input{ansipspace}
+
+	\newpage{}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:hilbert}}
+	\input{anshilbert}
+
+
+\part{Advanced Topics}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:multilin}}
+	\input{ansmultilin}
+
+	\newpage{}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:functions}}
+	\input{ansfunctions}
+
+	\newpage{}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:oncoords}}
+	\input{ansoncoords}
+
+	\newpage{}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:series}}
+	\input{ansseries}
+
+	\newpage{}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:diffeq}}
+	\input{ansdiffeq}
+
+	\newpage{}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:diffegeo}}
+	\input{ansdiffegeo}
+
+
+\part{Miscellaneous Topics}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:simp}}
+	\input{anssimp}
+
+	\newpage{}
+	\chap{Solutions to Chapter~\ref{mmyau-ch:differentials}}
+	\input{ansdifferentials}
+
+\appendix
+\part{Appendices}
+\end{document}

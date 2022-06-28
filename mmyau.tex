@@ -1,5 +1,12 @@
 \documentclass[12pt]{book}
 \usepackage{hw}
+\usepackage{multicol}
+\theoremstyle{definition}
+\usepackage{answers}
+\Newassociation{solution}{Solution}{answers}
+\newtheorem{exercise}{Exercise}
+\numberwithin{exercise}{section}
+\renewcommand{\Solutionlabel}[1]{\textbf{Solution #1}}
 
 \title{Math Methods You'll Actually Use}
 \author{Charles Yang}
@@ -14,27 +21,124 @@
 \mainmatter\
 
 \part{Math on the Complex Plane}
-\input{complex.tex}
-\input{trig.tex}
-\input{cfn.tex}
-\input{integrals.tex}
+	\Opensolutionfile{answers}[anscomplex]
+	\input{complex.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:complex}}
+	\input{anscomplex}
+
+	\Opensolutionfile{answers}[anstrig]
+	\input{trig.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:trig}}
+	\input{anstrig}
+
+	\Opensolutionfile{answers}[anscfn]
+	\input{cfn.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:cfn}}
+	\input{anscfn}
+
+	\Opensolutionfile{answers}[ansintegrals]
+	\input{integrals.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:integrals}}
+	\input{ansintegrals}
 
 \part{Linear Algebra}
-\input{vecmat.tex}
-\input{linearity.tex}
-\input{ipspace.tex}
-\input{hilbert.tex}
+	\Opensolutionfile{answers}[ansvecmat]
+	\input{vecmat.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:vecmat}}
+	\input{ansvecmat}
+
+	\Opensolutionfile{answers}[anslinearity]
+	\input{linearity.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:linearity}}
+	\input{anslinearity}
+
+	\Opensolutionfile{answers}[ansipspace]
+	\input{ipspace.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:ipspace}}
+	\input{ansipspace}
+
+	\Opensolutionfile{answers}[anshilbert]
+	\input{hilbert.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:hilbert}}
+	\input{anshilbert}
+
 
 \part{Advanced Topics}
-\input{multilin.tex}
-\input{functions.tex}
-\input{oncoords.tex}
-\input{series.tex}
-\input{diffeq.tex}
+	\Opensolutionfile{answers}[ansmultilin]
+	\input{multilin.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:multilin}}
+	\input{ansmultilin}
+
+	\Opensolutionfile{answers}[ansfunctions]
+	\input{functions.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:functions}}
+	\input{ansfunctions}
+
+	\Opensolutionfile{answers}[ansoncoords]
+	\input{oncoords.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:oncoords}}
+	\input{ansoncoords}
+
+	\Opensolutionfile{answers}[ansseries]
+	\input{series.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:series}}
+	\input{ansseries}
+
+	\Opensolutionfile{answers}[ansdiffeq]
+	\input{diffeq.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:diffeq}}
+	\input{ansdiffeq}
+
+	\Opensolutionfile{answers}[ansdiffegeo]
+	\input{diffegeo}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:diffegeo}}
+	\input{ansdiffegeo}
+
 
 \part{Miscellaneous Topics}
-\input{simp.tex}
-\input{differentials.tex}
+	\Opensolutionfile{answers}[anssimp]
+	\input{simp.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:simp}}
+	\input{anssimp}
+
+	\Opensolutionfile{answers}[ansdifferentials]
+	\input{differentials.tex}
+	\Closesolutionfile{answers}
+	\newpage{}
+	\section*{Solutions to Chapter~\ref{ch:differentials}}
+	\input{ansdifferentials}
 
 \appendix
+\part{Appendices}
+	\input{notation.tex}
 \end{document}
