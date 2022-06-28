@@ -1,6 +1,77 @@
 %! TEX root = mmyau.tex
-\chapter{Trigonometric Functions}
-Recall the elementary trigonometric functions, sine and cosine. 
+\chapter{Trigonometric Functions}\label{ch:trig}
 \section{Trig Identities}
-\section{Trig Substitutions}
+Pretty much all useful trig identities can be derived from just Euler's formula
+\begin{equation}
+	e^{i\theta} = \cos\theta + i\sin\theta \tag{\ref{eq1:euler}}
+\end{equation}
+and all of the familiar properties of the exponential function. Firstly, we see that we can write\footnote{Or, in fact, \emph{define}}
+\begin{equation}
+	\cos\theta = \frac{e^{i\theta}+e^{-i\theta}}{2}\qquad\qquad\sin\theta\frac{e^{i\theta}-e^{-i\theta}}{2i}
+\end{equation}
+As seen in problem 1.2.1, we have
+\[e^{-i\theta} = \cos\theta - i\sin\theta\]
+so
+\[e^{-i\theta} = \left(e^{i\theta}\right)\ast\]
+thus, we have that 
+\[\abs{e^{i\theta}}=\sqrt{e^{i\theta}e^{-i\theta}} = \sqrt{e^{0}} = 1\]
+and we obtain the Pythagorean identity
+\begin{equation}
+	\abs{e^{i\theta}}^2 = \cos^2\theta+\sin^2\theta = 1
+\end{equation}
+
+Additionally, using the fact that
+\[e^{-i\theta} = e^{i(-\theta)}\]
+we can find the parity (evenness or oddness) of sine and cosine:
+\begin{equation}
+	\cos(-\theta) = \cos\theta \qquad\qquad \sin(-\theta) =-\sin\theta
+\end{equation}
+By multiplying the Euler formula,
+\[e^{i(\theta+\phi)} = e^{i\theta}e^{i\phi}\]
+and matching coefficients, (i.e., setting real parts equal and imaginary parts equal), we can obtain the angle addition formulae
+\begin{subequations}
+	\begin{equation}
+		\sin(\theta+\phi) = \sin\theta\cos\phi + \cos\theta\sin\phi
+	\end{equation}
+	\begin{equation}
+		\cos(\theta+\phi) = \cos\theta\cos\phi -\sin\theta\sin\phi
+	\end{equation}
+\end{subequations}
+Similarly, we can find the angle subtraction formulae, either by multiplying \(e^{i(\theta-\phi)} = e^{i\theta}e^{-i\phi}\), or by using the parity of sine and cosine. 
+\begin{exercise}
+	Do just that---derive the angle subtraction formulae
+\begin{solution}
+	literally just do what I said
+\end{solution}
+\end{exercise}
+
+Combining the angle addition formulae with the pythagorean identity, we obtain the angle reduction formulae
+\begin{subequations}
+	\begin{align}
+		\sin2\theta &= 2\sin\theta\cos\theta\\
+		\cos2\theta &= \frac{1}{2}\cos^2\theta - \frac{1}{2}\\
+			    &=\frac{1}{2}-\frac{1}{2}\sin^2\theta
+	\end{align}
+\end{subequations}
+\begin{exercise}
+	Verify the above are true.
+\begin{solution}
+	again, just do what I said.
+\end{solution}
+\end{exercise}
+
+\subsection{de Moivre's Theorem}
+de Moivre's theorem relies on a very basic premise:
+\[(e^{i\theta}) = e^{in\theta} = e^{i(n\theta)}\]
+Using Euler's formula, we can expand the leftmost and rightmost terms to obtain de Moivre's theorem:
+\begin{equation}
+	\left(\cos\theta + i\sin\theta\right)^n = \cos n \theta + i\sin n\theta
+\end{equation}
+From de Moivre's theorem, we can obtain angle reduction formulae by expanding the LHS and 
+
 \section{Hyperbolic Trig Functions}
+
+
+\section{Substitutions}
+I legitimately cannot remember what examples to use here but the only thing i can think of are boosts
+
